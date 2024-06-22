@@ -1,7 +1,11 @@
+import { Heading } from "../components/Heading"
+import { SubHeading } from "../components/SubHeading"
+
 const Signup = () => {
     return (
         <>
-            <h1>Sign up Page</h1>
+            <Heading label={"Sign up"} />
+            <SubHeading label={"Enter your infromation to create an account"} />
         </>
     )
 }
