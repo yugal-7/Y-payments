@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
 
-mongoose.connect('mongodb://localhost:27017/PaymentApp');
+mongoose.connect(process.env.DATABASE_URL);
 
 const userSchema = new mongoose.Schema({
     username: {
