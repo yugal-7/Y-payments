@@ -10,7 +10,11 @@ export const Users = () => {
     const [filter, setFilter] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter)
+          axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter, {
+            headers: {
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+          })
             .then(response => {
                 setUsers(response.data.user)
             })
